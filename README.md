@@ -2,14 +2,17 @@
 
 
 ## antes mirar  .example.env
+
+```
 añadir todas las variables de entorno 
 se utiliza 
 
-PORT=8080 -- numero del puerto por defecto esta puerto 8080
-MONGODB_CNN  -- mongo atlas
-PRIVATEKEY -- credenciales para jwt
-GOOGLE_CLIENT_ID  -- credenciales para google
+PORT=8080 --> numero del puerto por defecto esta puerto 8080
+MONGODB_CNN  --> mongo atlas
+PRIVATEKEY --> credenciales para jwt
+GOOGLE_CLIENT_ID  --> credenciales para google
 
+```
 
 ### `npm i`
 
