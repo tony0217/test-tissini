@@ -18,6 +18,7 @@ const login = async (req = request, res = response) => {
         if (!user) {
             return res.status(400).json({
                 msg: 'usuario no se encuentra registrado',
+                status:400
                 
            });
         }
@@ -25,6 +26,7 @@ const login = async (req = request, res = response) => {
         if (!user.estado) {
             return res.status(400).json({
                 msg: 'usuario no se encuentra registrado',
+                status:400
                 
            });
         }
@@ -36,6 +38,7 @@ const login = async (req = request, res = response) => {
         if (!Validpassword) {
             return res.status(400).json({
                 msg: 'Contraseña  incorrecta',
+                status:400
            });
         }
 
@@ -48,7 +51,8 @@ const login = async (req = request, res = response) => {
        res.status(200).json({
             msg: 'login ok',
             user,
-            token
+            token,
+            status:200
        });
 
         
@@ -95,6 +99,7 @@ const googleSingIn = async (req = request, res = response) => {
         if (!user.estado) {
             return res.status(401).json({
                 msg: 'pongase en contacto con el admin - usuario no se encuentra registrado',
+                status:400
            });
         }
 
@@ -107,7 +112,8 @@ const googleSingIn = async (req = request, res = response) => {
         res.status(200).json({
             msg: 'login google ok',
             user,
-            token
+            token,
+            status:200
        });
         
     } catch (error) {

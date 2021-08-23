@@ -34,7 +34,7 @@ router.post('/', [
     check('password', 'El password minimo 6 carcteres').isLength({ min: 6 }),
     //check('rol','El email no es valido y es requerido').isIn(['ADMIN_ROLE','USER_ROLE']),
     //check('rol').custom( (rol)=>rolValidate(rol)),
-    check('rol').custom(rolValidate),
+    //check('rol').custom(rolValidate),
     check('email').custom(emailValidate),
     validateFields
 ],

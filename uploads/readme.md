@@ -1,3 +1,0 @@
-'''
-imagenes o archivos guardados
-'''

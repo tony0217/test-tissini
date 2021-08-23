@@ -45,7 +45,13 @@ const postUser = async (req = request, res = response) => {
 
     try {
         // field que se requieren del body
+
+
+
        const {nombre,edad, rol,password,email} = req.body;
+
+       
+       console.log('requ--->',nombre,edad, rol,password,email);
        const user = User({nombre,edad, rol,password,email});
 
        //pass encrypt
@@ -55,8 +61,9 @@ const postUser = async (req = request, res = response) => {
        await user.save();
 
        res.status(201).json({
-            msg: 'datos guardados',
-            user
+            msg: 'Usuario Registrado',
+            user,
+            status:201
        });
 
         
@@ -64,6 +71,7 @@ const postUser = async (req = request, res = response) => {
         console.log(error);
         res.status(500).json({
             msg: 'error 500 contactar con el administrador',
+            status:500
        });
         
     }

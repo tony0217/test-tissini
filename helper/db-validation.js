@@ -4,9 +4,7 @@
 
 const {
     Rol,
-    User,
-    Category,
-    Product
+    User
 } = require('../models');
 
 
@@ -39,32 +37,6 @@ const UserExistById = async (id)=>{
 }
 
 
-const CategoryExistById = async (id)=>{
-
-    //category existe
-    const categoryExist = await Category.findById(id);
-    if (!categoryExist) throw new Error(`La categoria con el id:${id}  no existe en la DB`);
-
-    //if (!categoryExist.estado) throw new Error(` La categoria con el id:${id}  ya fue eliminada en la DB`);
-}
-
-
-
-const ProductExistById = async (id)=>{
-
-    //product existe
-    const productExist = await Product.findById(id);
-    return new Promise((resolve,reject) =>{
-        if (!productExist) {
-          reject(`El producto con el id:${id}  no existe en la DB`);
-        }
-        resolve(productExist);
-    });
-
-    //if (!productExist) throw new Error(`El producto con el id:${id}  no existe en la DB`);
-
-}
-
 const collectionValidate = (collection = '', collectionValid = [])=>{
 
     if (!collectionValid.includes(collection)) 
@@ -83,7 +55,5 @@ module.exports = {
     rolValidate,
     emailValidate,
     UserExistById,
-    CategoryExistById,
-    ProductExistById,
     collectionValidate
 };
